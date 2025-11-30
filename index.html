@@ -1,0 +1,146 @@
+<!DOCTYPE html> 
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Портфолио Конюхова Николая — студента МГТУ им. Н. Э. Баумана" />
+  <title>Конюхов Николай — Портфолио</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/outlines.css" />
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <div class="main-header-wrap">
+                <a href="#about">
+                    <img src="img/main-logo.svg" width="60" height="60" alt="Логотип">
+                </a>
+
+                <button class="nav-btn nav-btn_close" type="button">
+                    <span class="visually-hidden">Закрыть меню</span>
+                </button>
+            </div>
+
+            <nav class="main-nav">
+                <a href="#about">Обо мне</a>
+                <a href="#skills">Навыки</a>
+                <a href="#interests">Интересы</a>
+                <a href="#contacts">Контакты</a>
+            </nav>
+        </header>
+
+        <main>
+            <!-- ОБО МНЕ -->
+            <section class="intro">
+                <div class="intro-wrapper">
+                    <div>
+                        <h1>Конюхов Николай</h1>
+                        <p class="subtitle">Инженер-программист</p>
+                    </div>
+                    <img src="img/user-photo.jpg" width="400" height="400" alt="Фотография Конюхова Николая" />
+                </div>
+            </section>
+
+            <section id="about" class="about">
+                <h2>Пара слов обо мне</h2>
+                <div class="text-wrapper">
+                    <p>
+                        Привет 👋
+                    </p>
+                    <p>
+                        В данный момент я учусь в магистратуре МГТУ им. Н. Э. Баумана по направлению «Информатика и вычислительная техника».
+                    </p>
+                    <p>
+                        В прошлом году защитил диплом бакалавра на тему «Разработка программного комплекса для автоматизации промышленных процессов». Работа была высоко оценена комиссией.
+                    </p>
+                    <p>
+                        Также я успел поработать инженером-программистом в ТехноПром. В будущем планирую стать Ведущим инженером-программистом.
+                    </p>
+                </div>
+            </section>
+
+            <!-- НАВЫКИ -->
+            <section id="skills" class="skills">
+                <div class="skills-header">
+                    <h2>Мои навыки</h2>
+                    <div class="skills-controls skills-sort">
+                        Сортировать
+                        <button type="button" data-sort-type="name">по названию</button>
+                        <button type="button" data-sort-type="level">по уровню</button>
+                    </div>
+                </div>
+
+                <dl class="skill-list">
+                    <dt>HTML</dt>
+                    <dd>
+                        <div class="skills-level" style="width: 90%;" data-level="90"></div>
+                        <span class="skills-level-text">90%</span>
+                    </dd>
+
+                    <dt>CSS</dt>
+                    <dd>
+                        <div class="skills-level" style="width: 85%;" data-level="85"></div>
+                        <span class="skills-level-text">85%</span>
+                    </dd>
+
+                    <dt>JavaScript</dt>
+                    <dd>
+                        <div class="skills-level" style="width: 80%;" data-level="80"></div>
+                        <span class="skills-level-text">80%</span>
+                    </dd>
+
+                    <dt>Python</dt>
+                    <dd>
+                        <div class="skills-level" style="width: 75%;" data-level="75"></div>
+                        <span class="skills-level-text">75%</span>
+                    </dd>
+
+                    <dt>Java</dt>
+                    <dd>
+                        <div class="skills-level" style="width: 70%;" data-level="70"></div>
+                        <span class="skills-level-text">70%</span>
+                    </dd>
+                </dl>
+            </section>
+
+            <!-- ИНТЕРЕСЫ -->
+            <section id="interests" class="interests">
+                <h2>Мои интересы</h2>
+                <div class="text-wrapper">
+                  <p>
+                    Меня особенно привлекает разработка веб-приложений, автоматизация процессов и создание эффективных пользовательских интерфейсов.
+                  </p>
+                  <p>
+                    Помимо веб-разработки интересуюсь мобильной разработкой и машинным обучением. В свободное от учебы и работы время изучаю новые технологии и frameworks.
+                  </p>
+                </div>
+            </section>
+
+            <!-- КОНТАКТЫ -->
+            <section id="contacts" class="contacts">
+                <h2>Мои контакты</h2>
+
+                <ul class="contact">
+                    <li><a class="contact-link contact-link_phone" href="tel:+79998765432">+7 999 876-54-32</a></li>
+                    <li><a class="contact-link contact-link_mail" href="mailto:n.konyukhov@example.com">n.konyukhov@example.com</a></li>
+                </ul>
+
+                <ul class="social">
+                    <li><a class="social-link social-link_github" href="https://github.com/Nifolio" target="_blank"><span class="visually-hidden">GitHub</span></a></li>
+                    <li><a class="social-link social-link_telegram" href="https://t.me/nifolio" target="_blank"><span class="visually-hidden">Telegram</span></a></li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>© 2025 Конюхов Николай</p>
+        </div>
+    </footer>
+</body>
+</html>
