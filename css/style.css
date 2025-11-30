@@ -35,7 +35,9 @@ body {
 .main-header-wrap {
     display: flex;
 }
-
+.nav-btn {
+    display: none;
+}
 .main-nav {
     display: flex;
 }
@@ -374,8 +376,29 @@ section,
 		height: 40px;
 	}
 
+    .nav-btn {
+		display: block;
+		width: 30px;
+		height: 30px;
+		border: 0;
+		background-color: transparent;
+		background-repeat: no-repeat;
+		background-position: center;
+		cursor: pointer;
+	}
+    .nav-btn_close {
+		background-image: url('../img/menu-btn/close.svg');
+	}
+    .nav-btn_open  {
+		background-image: url('../img/menu-btn/burger.svg'); 
+	}
+
     .main-nav a {
 		padding: 20px 30px;
+	}
+	
+	.main-nav_closed {
+		display: none; 
 	}
 
     .main-header-wrap {
