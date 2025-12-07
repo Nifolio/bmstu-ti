@@ -125,11 +125,13 @@ p:last-child {
 .skills-header h2 {
     margin: 0;
 }
+
 .skill-list {
     margin: 0;
     padding: 0;
     line-height: 1;
 }
+
 .skill-list dt {
     margin-bottom: 6px;
     padding: 5px 0 5px 38px;
@@ -137,25 +139,28 @@ p:last-child {
     background-repeat: no-repeat;
     background-size: 30px;
 }
+
 .skill-item {
     text-transform: lowercase;
 }
-.skills-level {
-    margin: 4px 0 18px;
+
+/* ОБОЛОЧКА уровня навыка */
+.skill-level {
+    margin: 4px 0 20px;
     padding: 2px;
     font-size: 0;
-    border: 1px solid var(--txt-color);
+    border: 1px solid var(--green);
     border-radius: 16px;
+}
+
+/* ЗАПОЛНЕНИЕ уровня навыка */
+.skill-level div {
     height: 14px;
     background-color: var(--green);
     border-radius: 8px;
 }
 
-
-.skills-level:last-child {
-    margin: 0;
-}
-
+/* Иконки (пути оставил твои) */
 .skill-item_html {
     background-image: url('../img/skills/html.svg');
 }
@@ -175,6 +180,7 @@ p:last-child {
 .skill-item_java {
     background-image: url('../img/skills/java.svg');
 }
+
 
 .contact {
     display: flex;
@@ -322,16 +328,11 @@ section,
 		padding-bottom: 80px;
 	}
 
-    .skills-level {
-		margin: 5px 0 20px;
-	}
     .skill-list dt {
         margin-bottom: 0;
         padding: 7px 0 7px 38px;
     }
-    .skills-level:last-child {
-		margin-top: 5px; 
-	}
+
 }
 
 @media screen and (max-width: 650px) {
