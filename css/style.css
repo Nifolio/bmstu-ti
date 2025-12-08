@@ -144,7 +144,6 @@ p:last-child {
     text-transform: lowercase;
 }
 
-/* ОБОЛОЧКА уровня навыка */
 .skill-level {
     margin: 4px 0 20px;
     padding: 2px;
@@ -153,32 +152,10 @@ p:last-child {
     border-radius: 16px;
 }
 
-/* ЗАПОЛНЕНИЕ уровня навыка */
 .skill-level div {
     height: 14px;
     background-color: var(--green);
     border-radius: 8px;
-}
-
-/* Иконки (пути оставил твои) */
-.skill-item_html {
-    background-image: url('../img/skills/html.svg');
-}
-
-.skill-item_css {
-    background-image: url('../img/skills/css.svg');
-}
-
-.skill-item_js {
-    background-image: url('../img/skills/javascript.svg');
-}
-
-.skill-item_python {
-    background-image: url('../img/skills/python.svg');
-}
-
-.skill-item_java {
-    background-image: url('../img/skills/java.svg');
 }
 
 
