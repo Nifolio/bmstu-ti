@@ -105,6 +105,67 @@ if (skillsSortControls) {
   });
 }
 
+const theme = {
+  className: "dark-theme",
+  storageKey: "portfolio-theme",
+  checkbox: document.querySelector(".switch-checkbox"),
+  current: "dark",
+
+  setStoredTheme(themeName) {
+    try {
+      localStorage.setItem(this.storageKey, themeName);
+    } catch (error) {
+      console.warn("Theme preference is not saved:", error);
+    }
+  },
+
+  getStoredTheme() {
+    try {
+      return localStorage.getItem(this.storageKey);
+    } catch (error) {
+      console.warn("Theme preference is not available:", error);
+      return null;
+    }
+  },
+
+  apply(themeName, options = {}) {
+    const isDark = themeName === "dark";
+
+    document.body.classList.toggle(this.className, isDark);
+    this.current = isDark ? "dark" : "light";
+
+    if (this.checkbox) {
+      this.checkbox.checked = !isDark;
+    }
+
+    if (!options.skipSave) {
+      this.setStoredTheme(this.current);
+    }
+  },
+
+  init() {
+    const storedTheme = this.getStoredTheme();
+    const isStoredThemeValid = storedTheme === "dark" || storedTheme === "light";
+    const bodyHasDarkClass = document.body.classList.contains(this.className);
+
+    const initialTheme =
+      (isStoredThemeValid && storedTheme) ||
+      (bodyHasDarkClass ? "dark" : null) ||
+      "dark";
+
+    this.apply(initialTheme || "dark", { skipSave: !isStoredThemeValid });
+
+    if (this.checkbox) {
+      this.checkbox.addEventListener("change", () => {
+        const nextTheme = this.checkbox.checked ? "light" : "dark";
+        this.apply(nextTheme);
+      });
+    }
+  }
+};
+
+theme.init();
+
 const menu = {
   navElement: null,
   buttonElement: null,
