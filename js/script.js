@@ -75,7 +75,6 @@ const skills = {
 
 const skillList = document.querySelector(".skill-list");
 skills.generateList(skillList);
-skills.generateList(skillList);
 
 const skillsSortControls = document.querySelector(".skills-sort");
 
@@ -107,56 +106,38 @@ if (skillsSortControls) {
 }
 
 const menu = {
-  navElement: document.querySelector(".main-nav"),
-  buttonElement: document.querySelector(".nav-btn"),
+  navElement: null,
+  buttonElement: null,
+
+  init({ navElement, buttonElement }) {
+    this.navElement = navElement;
+    this.buttonElement = buttonElement;
+
+    this.close();
+
+    this.buttonElement.addEventListener("click", () => {
+      this.isOpen() ? this.close() : this.open();
+    });
+  },
+
+  isOpen() {
+    return !this.navElement.classList.contains("main-nav_closed");
+  },
 
   open() {
-    if (!this.navElement || !this.buttonElement) {
-      return;
-    }
-
     this.navElement.classList.remove("main-nav_closed");
     this.buttonElement.classList.remove("nav-btn_open");
     this.buttonElement.classList.add("nav-btn_close");
-
-    const buttonText = this.buttonElement.querySelector(".visually-hidden");
-    if (buttonText) {
-      buttonText.textContent = "Закрыть меню";
-    }
   },
 
   close() {
-    if (!this.navElement || !this.buttonElement) {
-      return;
-    }
-
     this.navElement.classList.add("main-nav_closed");
-    this.buttonElement.classList.add("nav-btn_open");
     this.buttonElement.classList.remove("nav-btn_close");
-
-    const buttonText = this.buttonElement.querySelector(".visually-hidden");
-    if (buttonText) {
-      buttonText.textContent = "Открыть меню";
-    }
+    this.buttonElement.classList.add("nav-btn_open");
   },
-
-  toggle() {
-    if (!this.navElement) {
-      return;
-    }
-
-    if (this.navElement.classList.contains("main-nav_closed")) {
-      this.open();
-    } else {
-      this.close();
-    }
-  }
 };
 
-menu.close();
-
-if (menu.buttonElement) {
-  menu.buttonElement.addEventListener("click", () => {
-    menu.toggle();
-  });
-}
+menu.init({
+  navElement: document.querySelector(".main-nav"),
+  buttonElement: document.querySelector(".nav-btn"),
+});

@@ -271,6 +271,22 @@ button:hover {
     background-color: var(--green);
     color: var(--bg-color);
 }
+.nav-btn {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    border-radius: 0;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    outline: none;
+}
+.nav-btn:hover,
+.nav-btn:active,
+.nav-btn:focus {
+    background-color: transparent;
+}
 section,
 .main-header {
 	padding-bottom: 120px; 
