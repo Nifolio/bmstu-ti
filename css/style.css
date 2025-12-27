@@ -190,10 +190,10 @@ p:last-child {
     background-image: url('../img/icon/email.svg');
 }
 .dark-theme .contact-link_phone {
-    background-image: url(../img/icon=phone-dark.svg);
+    background-image: url(../img/icon/phone-dark.svg);
 }
 .dark-theme .contact-link_mail  {
-    background-image: url(../img/icon=email-dark.svg);
+    background-image: url(../img/icon/email-dark.svg);
 }
 .social {
     display: flex;
@@ -243,8 +243,8 @@ p:last-child {
     line-height: 1.5;
 }
 .dark-theme .main-footer {
-    color: var(--txt-color);
-    background-color: var(--bg-color);
+    background-color: var(--green);
+    color: #031923;   
 }
 
 ul {

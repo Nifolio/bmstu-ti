@@ -82,11 +82,7 @@ if (skillsSortControls) {
   skillsSortControls.addEventListener("click", (event) => {
     const target = event.target;
 
-    if (!(target instanceof HTMLElement)) {
-      return;
-    }
-
-    if (target.nodeName !== "BUTTON") {
+    if (!(target instanceof HTMLElement) || target.nodeName !== "BUTTON") {
       return;
     }
 
@@ -128,7 +124,7 @@ const theme = {
     }
   },
 
-  apply(themeName, options = {}) {
+  setTheme(themeName, options = {}) {
     const isDark = themeName === "dark";
 
     document.body.classList.toggle(this.className, isDark);
@@ -153,12 +149,12 @@ const theme = {
       (bodyHasDarkClass ? "dark" : null) ||
       "dark";
 
-    this.apply(initialTheme || "dark", { skipSave: !isStoredThemeValid });
+    this.setTheme(initialTheme || "dark", { skipSave: !isStoredThemeValid });
 
     if (this.checkbox) {
       this.checkbox.addEventListener("change", () => {
         const nextTheme = this.checkbox.checked ? "light" : "dark";
-        this.apply(nextTheme);
+        this.setTheme(nextTheme);
       });
     }
   }
@@ -185,16 +181,25 @@ const menu = {
     return !this.navElement.classList.contains("main-nav_closed");
   },
 
+  setButtonText(text) {
+  const span = this.buttonElement.querySelector(".visually-hidden");
+  if (span) {
+    span.textContent = text;
+  }
+  },
+
   open() {
     this.navElement.classList.remove("main-nav_closed");
     this.buttonElement.classList.remove("nav-btn_open");
     this.buttonElement.classList.add("nav-btn_close");
+    this.setButtonText("Закрыть меню");
   },
 
   close() {
     this.navElement.classList.add("main-nav_closed");
     this.buttonElement.classList.remove("nav-btn_close");
     this.buttonElement.classList.add("nav-btn_open");
+    this.setButtonText("Открыть меню");
   },
 };
 
