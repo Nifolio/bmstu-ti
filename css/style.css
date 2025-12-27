@@ -145,6 +145,18 @@ p:last-child {
     background-size: 30px;
 }
 
+.skills-message {
+    margin: 0 0 16px;
+    color: #c0392b;
+}
+.skills-message_hidden {
+    display: none;
+}
+.skills-controls button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
 .skill-item {
     text-transform: lowercase;
 }
