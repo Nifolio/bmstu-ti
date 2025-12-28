@@ -146,11 +146,7 @@ const skills = {
     this.listElement = listElement;
     this.controlsElement = controlsElement;
     this.messageElement = messageElement;
-
-    this.toggleControls(true);
-    this.hideMessage();
-    this.clearList();
-
+    
     if (dataUrl) {
       this.getData(dataUrl);
     }
